@@ -57,6 +57,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="core.js" />
     <Content Include="index.html" />
     <Content Include="Styles.css" />
     <Content Include="Web.config" />
