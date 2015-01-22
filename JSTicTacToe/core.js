@@ -1,6 +1,4 @@
-﻿
-
-/* This piece is for testing purposes*/
+﻿/* This piece is for testing purposes*/
 var inputArr = new Array(3);
 for (var i = 0; i < 3; i++) {
     inputArr[i] = new Array(3);
@@ -25,20 +23,34 @@ function NextStep(x, y, z) {
     array3 = [x, y, z];
     var multiArray = [[array1], [array2], [array3]];
 
-    //switching the array1[last] with array3[last]
-    var temp = array1[array1.length - 1];
-    array1[array1.length - 1] = array3[array3.length - 1];
-    array3[array3.length - 1] = temp;
+    //Exception for array1[1]===array1[2]
+    if (array1[1] === array1[2]) {
+        var temp = array1[0];
+        var temp1 = array2[0];
+        var temp2 = array3[0];
+        array1[0] = array1[1];
+        array2[0] = array2[1];
+        array3[0] = array3[1];
+        array1[1] = temp;
+        array2[1] = temp1;
+        array3[1] = temp2;
+    } else {
+        //switching the array1 column with array3 cloumn
+        var temp = array1[1];
+        var temp1 = array2[1];
+        var temp2 = array3[1];
+        array1[1] = array1[array1.length - 1];
+        array2[1] = array2[array2.length - 1];
+        array3[1] = array3[array3.length - 1];
+        array1[array1.length - 1] = temp;
+        array2[array1.length - 1] = temp1;
+        array3[array1.length - 1] = temp2;
 
-    //switching the array1[last] with array2[Middle]
-    var temp1 = array2[1];
-    array2[1] = array1[array1.length - 1];
-    array1[array1.length - 1] = temp1;
-
-    //switching the array2[last] with array3[Middle]
-    var temp2 = array3[1];
-    array3[1] = array2[array2.length - 1];
-    array2[array2.length - 1] = temp2;
+        //switching the array2[Middle] with array1[Last]
+        var temp3 = array1[array1.length - 1];
+        array1[array1.length - 1] = array3[1];
+        array3[1] = temp3;
+    }
 
     for (var i = 0; i < multiArray.length; i++) {
         var multiArray = [[array1], [array2], [array3]];
@@ -46,8 +58,20 @@ function NextStep(x, y, z) {
     }
 }
 
-NextStep(1, 2, 3);
-
-
-
-
+NextStep(0, 0, 0);
+console.log("");
+NextStep(0, 0, 1);
+console.log("")
+NextStep(0, 0, 2);
+console.log("")
+NextStep(0, 1, 0);
+console.log("")
+NextStep(0, 1, 1);
+console.log("")
+NextStep(0, 1, 2);
+console.log("")
+NextStep(0, 2, 0);
+console.log("")
+NextStep(0, 2, 1);
+console.log("")
+NextStep(0, 2, 2);
