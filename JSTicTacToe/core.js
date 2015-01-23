@@ -17,6 +17,10 @@ inputArr[0][2][0] = 0;
 inputArr[0][2][1] = 0;
 inputArr[0][2][2] = 0;
 
+/*
+* This function will take in the current 9 values of the game and decide the next step
+*
+*/
 function NextStep(x, y, z) {
     array1 = [x, y, z];
     array2 = [x, y, z];
