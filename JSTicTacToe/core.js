@@ -7,6 +7,10 @@
     firstRow = [arrayTotal[0], arrayTotal[1], arrayTotal[2]];
     secondRow = [arrayTotal[3], arrayTotal[4], arrayTotal[5]];
     thirdRow = [arrayTotal[6], arrayTotal[7], arrayTotal[8]];
+    console.log(firstRow);
+    console.log(secondRow);
+    console.log(thirdRow);
+    console.log("Then");
 
     //for there is already a winning case in the given input array 
     if (((firstRow[0] === firstRow[1]) && (firstRow[1] === firstRow[2])) || ((firstRow[0] === secondRow[0]) && (secondRow[0] === thirdRow[0])) || ((firstRow[0] === secondRow[1]) && (secondRow[1] === thirdRow[2]))) {
@@ -84,9 +88,15 @@
             }
             break;
 
-            /*default :
-                console.log("Please enter a valid choice of X or O");*/
+        default:
+            console.log("Please enter a valid choice of X or O");
     }
+
+    console.log(firstRow);
+    console.log(secondRow);
+    console.log(thirdRow);
+    console.log("");
+
 
     if (choice === "o") {
         console.log(arrayX);
@@ -99,4 +109,4 @@
 
 var array = [1, 1, 0, 2, 0, 2, 0, 2, 2];
 nextStep.arrayTotal = array;
-nextStep(array, "x");
+nextStep(array, "o");
