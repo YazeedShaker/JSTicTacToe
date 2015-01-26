@@ -1,81 +1,102 @@
-﻿/* This piece is for testing purposes*/
-var inputArr = new Array(3);
-for (var i = 0; i < 3; i++) {
-    inputArr[i] = new Array(3);
-    for (var j = 0; j < 3; j++) {
-        inputArr[i][j] = new Array(3);
+﻿function nextStep(arrayTotal, choice) {
+
+    this.arrayTotal = arrayTotal;
+    var arrayX = [];
+    var arrayO = [];
+
+    firstRow = [arrayTotal[0], arrayTotal[1], arrayTotal[2]];
+    secondRow = [arrayTotal[3], arrayTotal[4], arrayTotal[5]];
+    thirdRow = [arrayTotal[6], arrayTotal[7], arrayTotal[8]];
+
+    //for there is already a winning case in the given input array 
+    if (((firstRow[0] === firstRow[1]) && (firstRow[1] === firstRow[2])) || ((firstRow[0] === secondRow[0]) && (secondRow[0] === thirdRow[0])) || ((firstRow[0] === secondRow[1]) && (secondRow[1] === thirdRow[2]))) {
+        firstRow[0] = 2;
+    } if (((firstRow[2] === secondRow[2]) && (secondRow[2] === thirdRow[2])) || ((firstRow[2] === secondRow[1]) && (secondRow[1] === thirdRow[0]))) {
+        firstRow[2] = 2;
+    } if ((firstRow[1] === secondRow[1]) && (secondRow[1] === thirdRow[1])) {
+        firstRow[1] = 2;
     }
-}
 
-inputArr[0][0][0] = 0;
-inputArr[0][0][1] = 0;
-inputArr[0][0][2] = 0;
-inputArr[0][1][0] = 0;
-inputArr[0][1][1] = 0;
-inputArr[0][1][2] = 0;
-inputArr[0][2][0] = 0;
-inputArr[0][2][1] = 0;
-inputArr[0][2][2] = 0;
 
-/*
-* This function will take in the current 9 values of the game and decide the next step
-*
-*/
-function NextStep(x, y, z) {
-    array1 = [x, y, z];
-    array2 = [x, y, z];
-    array3 = [x, y, z];
-    var multiArray = [[array1], [array2], [array3]];
+    switch (choice) {
+        //For the case if the choice is X
+        case "x":
 
-    //Exception for array1[1]===array1[2]
-    if (array1[1] === array1[2]) {
-        var temp = array1[0];
-        var temp1 = array2[0];
-        var temp2 = array3[0];
-        array1[0] = array1[1];
-        array2[0] = array2[1];
-        array3[0] = array3[1];
-        array1[1] = temp;
-        array2[1] = temp1;
-        array3[1] = temp2;
+            //for the probability of a winning case
+            if (((firstRow[1] === firstRow[2]) && (firstRow[2] === 1) || (secondRow[1] === thirdRow[2]) && (thirdRow[2] === 1)) || ((secondRow[0] === thirdRow[0]) && (thirdRow[0] === 1))) {
+                arrayO.push(1);
+            } if (((secondRow[1] === thirdRow[0]) && (thirdRow[0] === 1)) || ((secondRow[2] === thirdRow[2]) && (thirdRow[2] === 1))) {
+                arrayO.push(3);
+            } if ((firstRow[1] === secondRow[1]) && (secondRow[1] === 1)) {
+                arrayO.push(8);
+            } if ((secondRow[1] === thirdRow[1]) && (thirdRow[1] === 1)) {
+                arrayO.push(2);
+            } if ((firstRow[1] === thirdRow[1]) && (thirdRow[1] === 1)) {
+                arrayO.push(5);
+            } if ((secondRow[0] === secondRow[1]) && (secondRow[1] === 1)) {
+                arrayO.push(6);
+            } if ((secondRow[0] === secondRow[2]) && (secondRow[2] === 1)) {
+                arrayO.push(5);
+            } if ((secondRow[1] === secondRow[2]) && (secondRow[2] === 1)) {
+                arrayO.push(4);
+            } if ((thirdRow[0] === thirdRow[1]) && (thirdRow[1] === 1)) {
+                arrayO.push(9);
+            } if ((thirdRow[0] === thirdRow[2]) && (thirdRow[2] === 1)) {
+                arrayO.push(8);
+            } if ((thirdRow[1] === thirdRow[2]) && (thirdRow[2] === 1)) {
+                arrayO.push(7);
+            } if ((firstRow[0] === secondRow[0]) && (secondRow[0] === 1)) {
+                arrayO.push(7);
+            } if ((firstRow[0] === secondRow[1]) && (secondRow[1] === 1)) {
+                arrayO.push(9);
+            }
+            break;
+
+            //For the case if the choice is O
+        case "o":
+            //for the probability of a winning case
+            if (((firstRow[1] === firstRow[2]) && (firstRow[2] === 0) || (secondRow[1] === thirdRow[2]) && (thirdRow[2] === 0)) || ((secondRow[0] === thirdRow[0]) && (thirdRow[0] === 0))) {
+                arrayX.push(1);
+            } if (((secondRow[1] === thirdRow[0]) && (thirdRow[0] === 0)) || ((secondRow[2] === thirdRow[2]) && (thirdRow[2] === 0))) {
+                arrayX.push(3);
+            } if ((firstRow[1] === secondRow[1]) && (secondRow[1] === 0)) {
+                arrayX.push(8);
+            } if ((secondRow[1] === thirdRow[1]) && (thirdRow[1] === 0)) {
+                arrayX.push(2);
+            } if ((firstRow[1] === thirdRow[1]) && (thirdRow[1] === 0)) {
+                arrayX.push(5);
+            } if ((secondRow[0] === secondRow[1]) && (secondRow[1] === 0)) {
+                arrayX.push(6);
+            } if ((secondRow[0] === secondRow[2]) && (secondRow[2] === 0)) {
+                arrayX.push(5);
+            } if ((secondRow[1] === secondRow[2]) && (secondRow[2] === 0)) {
+                arrayX.push(4);
+            } if ((thirdRow[0] === thirdRow[1]) && (thirdRow[1] === 0)) {
+                arrayX.push(9);
+            } if ((thirdRow[0] === thirdRow[2]) && (thirdRow[2] === 0)) {
+                arrayX.push(8);
+            } if ((thirdRow[1] === thirdRow[2]) && (thirdRow[2] === 0)) {
+                arrayX.push(7);
+            } if ((firstRow[0] === secondRow[0]) && (secondRow[0] === 0)) {
+                arrayX.push(7);
+            } if ((firstRow[0] === secondRow[1]) && (secondRow[1] === 0)) {
+                arrayX.push(9);
+            }
+            break;
+
+            /*default :
+                console.log("Please enter a valid choice of X or O");*/
+    }
+
+    if (choice === "o") {
+        console.log(arrayX);
     } else {
-        //switching the array1 column with array3 cloumn
-        var temp = array1[1];
-        var temp1 = array2[1];
-        var temp2 = array3[1];
-        array1[1] = array1[array1.length - 1];
-        array2[1] = array2[array2.length - 1];
-        array3[1] = array3[array3.length - 1];
-        array1[array1.length - 1] = temp;
-        array2[array1.length - 1] = temp1;
-        array3[array1.length - 1] = temp2;
-
-        //switching the array2[Middle] with array1[Last]
-        var temp3 = array1[array1.length - 1];
-        array1[array1.length - 1] = array3[1];
-        array3[1] = temp3;
+        console.log(arrayO);
     }
 
-    for (var i = 0; i < multiArray.length; i++) {
-        var multiArray = [[array1], [array2], [array3]];
-        console.log(multiArray[i]);
-    }
 }
 
-NextStep(0, 0, 0);
-console.log("");
-NextStep(0, 0, 1);
-console.log("")
-NextStep(0, 0, 2);
-console.log("")
-NextStep(0, 1, 0);
-console.log("")
-NextStep(0, 1, 1);
-console.log("")
-NextStep(0, 1, 2);
-console.log("")
-NextStep(0, 2, 0);
-console.log("")
-NextStep(0, 2, 1);
-console.log("")
-NextStep(0, 2, 2);
+
+var array = [1, 1, 0, 2, 0, 2, 0, 2, 2];
+nextStep.arrayTotal = array;
+nextStep(array, "x");
