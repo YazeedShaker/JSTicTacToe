@@ -27,129 +27,153 @@ function nextStep(arrayTotal, choice) {
         //For the case if the choice is X
         case "x":
 
-            //for the probability of a winning case we block it with an O
-            if (((firstRow[1] === firstRow[2]) && (firstRow[2] === 1) || (secondRow[1] === thirdRow[2]) && (thirdRow[2] === 1)) || ((secondRow[0] === thirdRow[0]) && (thirdRow[0] === 1))) {
-                arrayO.push(1);
-            } if (((secondRow[1] === thirdRow[0]) && (thirdRow[0] === 1)) || ((secondRow[2] === thirdRow[2]) && (thirdRow[2] === 1))) {
-                arrayO.push(3);
-            } if ((firstRow[1] === secondRow[1]) && (secondRow[1] === 1)) {
-                arrayO.push(8);
-            } if ((secondRow[1] === thirdRow[1]) && (thirdRow[1] === 1)) {
-                arrayO.push(2);
-            } if ((firstRow[1] === thirdRow[1]) && (thirdRow[1] === 1)) {
-                arrayO.push(5);
-            } if ((secondRow[0] === secondRow[1]) && (secondRow[1] === 1)) {
-                arrayO.push(6);
-            } if ((secondRow[0] === secondRow[2]) && (secondRow[2] === 1)) {
-                arrayO.push(5);
-            } if ((secondRow[1] === secondRow[2]) && (secondRow[2] === 1)) {
-                arrayO.push(4);
-            } if ((thirdRow[0] === thirdRow[1]) && (thirdRow[1] === 1)) {
-                arrayO.push(9);
-            } if ((thirdRow[0] === thirdRow[2]) && (thirdRow[2] === 1)) {
-                arrayO.push(8);
-            } if ((thirdRow[1] === thirdRow[2]) && (thirdRow[2] === 1)) {
-                arrayO.push(7);
-            } if ((firstRow[0] === secondRow[0]) && (secondRow[0] === 1)) {
-                arrayO.push(7);
-            } if ((firstRow[0] === secondRow[1]) && (secondRow[1] === 1)) {
-                arrayO.push(9);
-            } if ((firstRow[2] === secondRow[1]) && secondRow[1] === 1) {
-                arrayO.push(7);
+            //for the winning case  
+            if (((firstRow[1] === firstRow[2]) && (firstRow[2] === 1) && (firstRow[0] === 2) || (secondRow[1] === thirdRow[2]) && (thirdRow[2] === 1)) && (firstRow[0] === 2) || ((secondRow[0] === thirdRow[0]) && (thirdRow[0] === 1)) && (firstRow[0] === 2)) {
+                arrayX.push(1);
+            } if (((secondRow[1] === thirdRow[0]) && (thirdRow[0] === 1)) && (firstRow[2] === 2) || ((secondRow[2] === thirdRow[2]) && (thirdRow[2] === 1)) && (firstRow[2] === 2)) {
+                arrayX.push(3);
+            } if ((firstRow[1] === secondRow[1]) && (secondRow[1] === 1) && (thirdRow[1] === 2)) {
+                arrayX.push(8);
+            } if ((secondRow[1] === thirdRow[1]) && (thirdRow[1] === 1) && (firstRow[1] === 2)) {
+                arrayX.push(2);
+            } if ((firstRow[1] === thirdRow[1]) && (thirdRow[1] === 1) && (secondRow[1]) === 2) {
+                arrayX.push(5);
+            } if ((secondRow[0] === secondRow[1]) && (secondRow[1] === 1) && (secondRow[2] === 2)) {
+                arrayX.push(6);
+            } if ((secondRow[0] === secondRow[2]) && (secondRow[2] === 1) && (secondRow[1] === 2)) {
+                arrayX.push(5);
+            } if ((secondRow[1] === secondRow[2]) && (secondRow[2] === 1) && (secondRow[0] === 2)) {
+                arrayX.push(4);
+            } if ((thirdRow[0] === thirdRow[1]) && (thirdRow[1] === 1) && (thirdRow[2]) === 2) {
+                arrayX.push(9);
+            } if ((thirdRow[0] === thirdRow[2]) && (thirdRow[2] === 1) && (thirdRow[1] === 2)) {
+                arrayX.push(8);
+            } if ((thirdRow[1] === thirdRow[2]) && (thirdRow[2] === 1) && (thirdRow[0] === 2)) {
+                arrayX.push(7);
+            } if ((firstRow[0] === secondRow[0]) && (secondRow[0] === 1) && (thirdRow[0]) === 2) {
+                arrayX.push(7);
+            } if ((firstRow[0] === secondRow[1]) && (secondRow[1] === 1) && (thirdRow[2] === 2)) {
+                arrayX.push(9);
+            } if ((firstRow[2] === secondRow[1]) && (secondRow[1] === 1) && (thirdRow[0] === 2)) {
+                arrayX.push(7);
+            } if ((firstRow[0] === firstRow[2]) && (firstRow[2] === 1) && (firstRow[1]) === 2) {
+                arrayX.push(2);
+            } if ((firstRow[0] === thirdRow[2]) && ((thirdRow[2]) === 1) && (secondRow[1]) === 2) {
+                arrayX.push(5);
+            } if ((firstRow[2] === thirdRow[2]) && (thirdRow[2] === 1) && (secondRow[2] === 2)) {
+                arrayX.push(6);
             }
-                //For the case of winning
-            else if (((firstRow[1] === firstRow[2]) && (firstRow[2] === 0) || (secondRow[1] === thirdRow[2]) && (thirdRow[2] === 0)) || ((secondRow[0] === thirdRow[0]) && (thirdRow[0] === 0))) {
-                arrayO.push(1);
-            } else if (((secondRow[1] === thirdRow[0]) && (thirdRow[0] === 0)) || ((secondRow[2] === thirdRow[2]) && (thirdRow[2] === 0))) {
-                arrayO.push(3);
-            } else if ((firstRow[1] === secondRow[1]) && (secondRow[1] === 0)) {
-                arrayO.push(8);
-            } else if ((secondRow[1] === thirdRow[1]) && (thirdRow[1] === 0)) {
-                arrayO.push(2);
-            } else if ((firstRow[1] === thirdRow[1]) && (thirdRow[1] === 0)) {
-                arrayO.push(5);
-            } else if ((secondRow[0] === secondRow[1]) && (secondRow[1] === 0)) {
-                arrayO.push(6);
-            } else if ((secondRow[0] === secondRow[2]) && (secondRow[2] === 0)) {
-                arrayO.push(5);
-            } else if ((secondRow[1] === secondRow[2]) && (secondRow[2] === 0)) {
-                arrayO.push(4);
-            } else if ((thirdRow[0] === thirdRow[1]) && (thirdRow[1] === 0)) {
-                arrayO.push(9);
-            } else if ((thirdRow[0] === thirdRow[2]) && (thirdRow[2] === 0)) {
-                arrayO.push(8);
-            } else if ((thirdRow[1] === thirdRow[2]) && (thirdRow[2] === 0)) {
-                arrayO.push(7);
-            } else if ((firstRow[0] === secondRow[0]) && (secondRow[0] === 0)) {
-                arrayO.push(7);
-            } else if ((firstRow[0] === secondRow[1]) && (secondRow[1] === 0)) {
-                arrayO.push(9);
-            } else if ((firstRow[2] === secondRow[1]) && secondRow[1] === 0) {
-                arrayO.push(7);
+
+                //For the blocknig case
+            else if (((firstRow[1] === firstRow[2]) && (firstRow[2] === 0) && (firstRow[0] === 2) || (secondRow[1] === thirdRow[2]) && (thirdRow[2] === 0)) && (firstRow[0] === 2) || ((secondRow[0] === thirdRow[0]) && (thirdRow[0] === 0)) && (firstRow[0] === 2)) {
+                arrayX.push(1);
+            } else if (((secondRow[1] === thirdRow[0]) && (thirdRow[0] === 0)) && (firstRow[2] === 2) || ((secondRow[2] === thirdRow[2]) && (thirdRow[2] === 0)) && (firstRow[2] === 2)) {
+                arrayX.push(3);
+            } else if ((firstRow[1] === secondRow[1]) && (secondRow[1] === 0) && (thirdRow[1] === 2)) {
+                arrayX.push(8);
+            } else if ((secondRow[1] === thirdRow[1]) && (thirdRow[1] === 0) && (firstRow[1] === 2)) {
+                arrayX.push(2);
+            } else if ((firstRow[1] === thirdRow[1]) && (thirdRow[1] === 0) && (secondRow[1] === 2)) {
+                arrayX.push(5);
+            } else if ((secondRow[0] === secondRow[1]) && (secondRow[1] === 0) && (secondRow[2] === 2)) {
+                arrayX.push(6);
+            } else if ((secondRow[0] === secondRow[2]) && (secondRow[2] === 0) && (secondRow[1] === 2)) {
+                arrayX.push(5);
+            } else if ((secondRow[1] === secondRow[2]) && (secondRow[2] === 0) && (secondRow[0] === 2)) {
+                arrayX.push(4);
+            } else if ((thirdRow[0] === thirdRow[1]) && (thirdRow[1] === 0) && (thirdRow[2] === 2)) {
+                arrayX.push(9);
+            } else if ((thirdRow[0] === thirdRow[2]) && (thirdRow[2] === 0) && (thirdRow[1] === 2)) {
+                arrayX.push(8);
+            } else if ((thirdRow[1] === thirdRow[2]) && (thirdRow[2] === 0) && (thirdRow[0] === 2)) {
+                arrayX.push(7);
+            } else if ((firstRow[0] === secondRow[0]) && (secondRow[0] === 0) && (thirdRow[0] === 2)) {
+                arrayX.push(7);
+            } else if ((firstRow[0] === secondRow[1]) && (secondRow[1] === 0) && (thirdRow[2] === 2)) {
+                arrayX.push(9);
+            } else if ((firstRow[2] === secondRow[1]) && (secondRow[1] === 0) && (thirdRow[0] === 2)) {
+                arrayX.push(7);
+            } else if ((firstRow[0] === firstRow[2]) && (firstRow[2] === 0) && (firstRow[1]) === 2) {
+                arrayX.push(2);
+            } else if ((firstRow[0] === thirdRow[2]) && ((thirdRow[2]) === 0) && (secondRow[1]) === 2) {
+                arrayX.push(5);
+            } else if ((firstRow[2] === thirdRow[2]) && (thirdRow[2] === 0) && (secondRow[2] === 2)) {
+                arrayX.push(6);
             }
             break;
 
-            //For the case if the choice is O we block it with an X
         case "o":
-            //for the probability of a winning case
-            if (((firstRow[1] === firstRow[2]) && (firstRow[2] === 0) || (secondRow[1] === thirdRow[2]) && (thirdRow[2] === 0)) || ((secondRow[0] === thirdRow[0]) && (thirdRow[0] === 0))) {
-                arrayX.push(1);
-            } if (((secondRow[1] === thirdRow[0]) && (thirdRow[0] === 0)) || ((secondRow[2] === thirdRow[2]) && (thirdRow[2] === 0))) {
-                arrayX.push(3);
-            } if ((firstRow[1] === secondRow[1]) && (secondRow[1] === 0)) {
-                arrayX.push(8);
-            } if ((secondRow[1] === thirdRow[1]) && (thirdRow[1] === 0)) {
-                arrayX.push(2);
-            } if ((firstRow[1] === thirdRow[1]) && (thirdRow[1] === 0)) {
-                arrayX.push(5);
-            } if ((secondRow[0] === secondRow[1]) && (secondRow[1] === 0)) {
-                arrayX.push(6);
-            } if ((secondRow[0] === secondRow[2]) && (secondRow[2] === 0)) {
-                arrayX.push(5);
-            } if ((secondRow[1] === secondRow[2]) && (secondRow[2] === 0)) {
-                arrayX.push(4);
-            } if ((thirdRow[0] === thirdRow[1]) && (thirdRow[1] === 0)) {
-                arrayX.push(9);
-            } if ((thirdRow[0] === thirdRow[2]) && (thirdRow[2] === 0)) {
-                arrayX.push(8);
-            } if ((thirdRow[1] === thirdRow[2]) && (thirdRow[2] === 0)) {
-                arrayX.push(7);
-            } if ((firstRow[0] === secondRow[0]) && (secondRow[0] === 0)) {
-                arrayX.push(7);
-            } if ((firstRow[0] === secondRow[1]) && (secondRow[1] === 0)) {
-                arrayX.push(9);
-            } if ((firstRow[2] === secondRow[1]) && secondRow[1] === 0) {
-                arrayX.push(7);
+            //for the winning case 
+            if (((firstRow[1] === firstRow[2]) && (firstRow[2] === 0) && (firstRow[0] === 2) || (secondRow[1] === thirdRow[2]) && (thirdRow[2] === 0)) && (firstRow[0] === 2) || ((secondRow[0] === thirdRow[0]) && (thirdRow[0] === 0)) && (firstRow[0] === 2)) {
+                arrayO.push(1);
+            } if (((secondRow[1] === thirdRow[0]) && (thirdRow[0] === 0)) && (firstRow[2] === 2) || ((secondRow[2] === thirdRow[2]) && (thirdRow[2] === 0)) && (firstRow[2] === 2)) {
+                arrayO.push(3);
+            } if ((firstRow[1] === secondRow[1]) && (secondRow[1] === 0) && (thirdRow[1] === 2)) {
+                arrayO.push(8);
+            } if ((secondRow[1] === thirdRow[1]) && (thirdRow[1] === 0) && (firstRow[1] === 2)) {
+                arrayO.push(2);
+            } if ((firstRow[1] === thirdRow[1]) && (thirdRow[1] === 0) && (secondRow[1]) === 2) {
+                arrayO.push(5);
+            } if ((secondRow[0] === secondRow[1]) && (secondRow[1] === 0) && (secondRow[2] === 2)) {
+                arrayO.push(6);
+            } if ((secondRow[0] === secondRow[2]) && (secondRow[2] === 0) && (secondRow[1] === 2)) {
+                arrayO.push(5);
+            } if ((secondRow[1] === secondRow[2]) && (secondRow[2] === 0) && (secondRow[0] === 2)) {
+                arrayO.push(4);
+            } if ((thirdRow[0] === thirdRow[1]) && (thirdRow[1] === 0) && (thirdRow[2]) === 2) {
+                arrayO.push(9);
+            } if ((thirdRow[0] === thirdRow[2]) && (thirdRow[2] === 0) && (thirdRow[1] === 2)) {
+                arrayO.push(8);
+            } if ((thirdRow[1] === thirdRow[2]) && (thirdRow[2] === 0) && (thirdRow[0] === 2)) {
+                arrayO.push(7);
+            } if ((firstRow[0] === secondRow[0]) && (secondRow[0] === 0) && (thirdRow[0]) === 2) {
+                arrayO.push(7);
+            } if ((firstRow[0] === secondRow[1]) && (secondRow[1] === 0) && (thirdRow[2] === 2)) {
+                arrayO.push(9);
+            } if ((firstRow[2] === secondRow[1]) && (secondRow[1] === 0) && (thirdRow[0] === 2)) {
+                arrayO.push(7);
+            } if ((firstRow[0] === firstRow[2]) && (firstRow[2] === 0) && (firstRow[1]) === 2) {
+                arrayO.push(2);
+            } if ((firstRow[0] === thirdRow[2]) && ((thirdRow[2]) === 0) && (secondRow[1]) === 2) {
+                arrayO.push(5);
+            } if ((firstRow[2] === thirdRow[2]) && (thirdRow[2] === 0) && (secondRow[2] === 2)) {
+                arrayO.push(6);
             }
-                //For the case of winning
-            else if (((firstRow[1] === firstRow[2]) && (firstRow[2] === 1) || (secondRow[1] === thirdRow[2]) && (thirdRow[2] === 1)) || ((secondRow[0] === thirdRow[0]) && (thirdRow[0] === 1))) {
-                arrayX.push(1);
-            } else if (((secondRow[1] === thirdRow[0]) && (thirdRow[0] === 1)) || ((secondRow[2] === thirdRow[2]) && (thirdRow[2] === 1))) {
-                arrayX.push(3);
-            } else if ((firstRow[1] === secondRow[1]) && (secondRow[1] === 1)) {
-                arrayX.push(8);
-            } else if ((secondRow[1] === thirdRow[1]) && (thirdRow[1] === 1)) {
-                arrayX.push(2);
-            } else if ((firstRow[1] === thirdRow[1]) && (thirdRow[1] === 1)) {
-                arrayX.push(5);
-            } else if ((secondRow[0] === secondRow[1]) && (secondRow[1] === 1)) {
-                arrayX.push(6);
-            } else if ((secondRow[0] === secondRow[2]) && (secondRow[2] === 1)) {
-                arrayX.push(5);
-            } else if ((secondRow[1] === secondRow[2]) && (secondRow[2] === 1)) {
-                arrayX.push(4);
-            } else if ((thirdRow[0] === thirdRow[1]) && (thirdRow[1] === 1)) {
-                arrayX.push(9);
-            } else if ((thirdRow[0] === thirdRow[2]) && (thirdRow[2] === 1)) {
-                arrayX.push(8);
-            } else if ((thirdRow[1] === thirdRow[2]) && (thirdRow[2] === 1)) {
-                arrayX.push(7);
-            } else if ((firstRow[0] === secondRow[0]) && (secondRow[0] === 1)) {
-                arrayX.push(7);
-            } else if ((firstRow[0] === secondRow[1]) && (secondRow[1] === 1)) {
-                arrayX.push(9);
-            } else if ((firstRow[2] === secondRow[1]) && secondRow[1] === 0) {
-                arrayX.push(7);
+                //For the blocking case
+            else if (((firstRow[1] === firstRow[2]) && (firstRow[2] === 1) && (firstRow[0] === 2) || (secondRow[1] === thirdRow[2]) && (thirdRow[2] === 1)) && (firstRow[0] === 2) || ((secondRow[0] === thirdRow[0]) && (thirdRow[0] === 1)) && (firstRow[0] === 2)) {
+                arrayO.push(1);
+            } else if (((secondRow[1] === thirdRow[0]) && (thirdRow[0] === 1)) && (firstRow[2] === 2) || ((secondRow[2] === thirdRow[2]) && (thirdRow[2] === 1)) && (firstRow[2] === 2)) {
+                arrayO.push(3);
+            } else if ((firstRow[1] === secondRow[1]) && (secondRow[1] === 1) && (thirdRow[1] === 2)) {
+                arrayO.push(8);
+            } else if ((secondRow[1] === thirdRow[1]) && (thirdRow[1] === 1) && (firstRow[1] === 2)) {
+                arrayO.push(2);
+            } else if ((firstRow[1] === thirdRow[1]) && (thirdRow[1] === 1) && (secondRow[1] === 2)) {
+                arrayO.push(5);
+            } else if ((secondRow[0] === secondRow[1]) && (secondRow[1] === 1) && (secondRow[2] === 2)) {
+                arrayO.push(6);
+            } else if ((secondRow[0] === secondRow[2]) && (secondRow[2] === 1) && (secondRow[1] === 2)) {
+                arrayO.push(5);
+            } else if ((secondRow[1] === secondRow[2]) && (secondRow[2] === 1) && (secondRow[0] === 2)) {
+                arrayO.push(4);
+            } else if ((thirdRow[0] === thirdRow[1]) && (thirdRow[1] === 1) && (thirdRow[2] === 2)) {
+                arrayO.push(9);
+            } else if ((thirdRow[0] === thirdRow[2]) && (thirdRow[2] === 1) && (thirdRow[1] === 2)) {
+                arrayO.push(8);
+            } else if ((thirdRow[1] === thirdRow[2]) && (thirdRow[2] === 1) && (thirdRow[0] === 2)) {
+                arrayO.push(7);
+            } else if ((firstRow[0] === secondRow[0]) && (secondRow[0] === 1) && (thirdRow[0] === 2)) {
+                arrayO.push(7);
+            } else if ((firstRow[0] === secondRow[1]) && (secondRow[1] === 1) && (thirdRow[2] === 2)) {
+                arrayO.push(9);
+            } else if ((firstRow[2] === secondRow[1]) && (secondRow[1] === 1) && (thirdRow[0] === 2)) {
+                arrayO.push(7);
+            } else if ((firstRow[0] === firstRow[2]) && (firstRow[2] === 1) && (firstRow[1]) === 2) {
+                arrayO.push(2);
+            } else if ((firstRow[0] === thirdRow[2]) && ((thirdRow[2]) === 1) && (secondRow[1]) === 2) {
+                arrayO.push(5);
+            } else if ((firstRow[2] === thirdRow[2]) && (thirdRow[2] === 1) && (secondRow[2] === 2)) {
+                arrayO.push(6);
             }
             break;
 
@@ -159,14 +183,14 @@ function nextStep(arrayTotal, choice) {
 
 
     if (choice === "o") {
-        console.log(arrayX);
+        console.log(_.uniq(arrayO, false));
     } else {
-        console.log(arrayO);
+        console.log(_.uniq(arrayX, false));
     }
 
 }
 
 
-var array = [1, 1, 0, 2, 0, 2, 0, 2, 2];
+var array = [1, 2, 0, 0, 2, 2, 1, 2, 1];
 nextStep.arrayTotal = array;
-nextStep(array, "o");
+nextStep(array, "x");
