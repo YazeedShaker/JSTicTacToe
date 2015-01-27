@@ -54,6 +54,38 @@ function nextStep(arrayTotal, choice) {
                 arrayO.push(7);
             } if ((firstRow[0] === secondRow[1]) && (secondRow[1] === 1)) {
                 arrayO.push(9);
+            } if ((firstRow[2] === secondRow[1]) && secondRow[1] === 1) {
+                arrayO.push(7);
+            }
+                //For the case of winning
+            else if (((firstRow[1] === firstRow[2]) && (firstRow[2] === 0) || (secondRow[1] === thirdRow[2]) && (thirdRow[2] === 0)) || ((secondRow[0] === thirdRow[0]) && (thirdRow[0] === 0))) {
+                arrayO.push(1);
+            } else if (((secondRow[1] === thirdRow[0]) && (thirdRow[0] === 0)) || ((secondRow[2] === thirdRow[2]) && (thirdRow[2] === 0))) {
+                arrayO.push(3);
+            } else if ((firstRow[1] === secondRow[1]) && (secondRow[1] === 0)) {
+                arrayO.push(8);
+            } else if ((secondRow[1] === thirdRow[1]) && (thirdRow[1] === 0)) {
+                arrayO.push(2);
+            } else if ((firstRow[1] === thirdRow[1]) && (thirdRow[1] === 0)) {
+                arrayO.push(5);
+            } else if ((secondRow[0] === secondRow[1]) && (secondRow[1] === 0)) {
+                arrayO.push(6);
+            } else if ((secondRow[0] === secondRow[2]) && (secondRow[2] === 0)) {
+                arrayO.push(5);
+            } else if ((secondRow[1] === secondRow[2]) && (secondRow[2] === 0)) {
+                arrayO.push(4);
+            } else if ((thirdRow[0] === thirdRow[1]) && (thirdRow[1] === 0)) {
+                arrayO.push(9);
+            } else if ((thirdRow[0] === thirdRow[2]) && (thirdRow[2] === 0)) {
+                arrayO.push(8);
+            } else if ((thirdRow[1] === thirdRow[2]) && (thirdRow[2] === 0)) {
+                arrayO.push(7);
+            } else if ((firstRow[0] === secondRow[0]) && (secondRow[0] === 0)) {
+                arrayO.push(7);
+            } else if ((firstRow[0] === secondRow[1]) && (secondRow[1] === 0)) {
+                arrayO.push(9);
+            } else if ((firstRow[2] === secondRow[1]) && secondRow[1] === 0) {
+                arrayO.push(7);
             }
             break;
 
@@ -86,6 +118,38 @@ function nextStep(arrayTotal, choice) {
                 arrayX.push(7);
             } if ((firstRow[0] === secondRow[1]) && (secondRow[1] === 0)) {
                 arrayX.push(9);
+            } if ((firstRow[2] === secondRow[1]) && secondRow[1] === 0) {
+                arrayX.push(7);
+            }
+                //For the case of winning
+            else if (((firstRow[1] === firstRow[2]) && (firstRow[2] === 1) || (secondRow[1] === thirdRow[2]) && (thirdRow[2] === 1)) || ((secondRow[0] === thirdRow[0]) && (thirdRow[0] === 1))) {
+                arrayX.push(1);
+            } else if (((secondRow[1] === thirdRow[0]) && (thirdRow[0] === 1)) || ((secondRow[2] === thirdRow[2]) && (thirdRow[2] === 1))) {
+                arrayX.push(3);
+            } else if ((firstRow[1] === secondRow[1]) && (secondRow[1] === 1)) {
+                arrayX.push(8);
+            } else if ((secondRow[1] === thirdRow[1]) && (thirdRow[1] === 1)) {
+                arrayX.push(2);
+            } else if ((firstRow[1] === thirdRow[1]) && (thirdRow[1] === 1)) {
+                arrayX.push(5);
+            } else if ((secondRow[0] === secondRow[1]) && (secondRow[1] === 1)) {
+                arrayX.push(6);
+            } else if ((secondRow[0] === secondRow[2]) && (secondRow[2] === 1)) {
+                arrayX.push(5);
+            } else if ((secondRow[1] === secondRow[2]) && (secondRow[2] === 1)) {
+                arrayX.push(4);
+            } else if ((thirdRow[0] === thirdRow[1]) && (thirdRow[1] === 1)) {
+                arrayX.push(9);
+            } else if ((thirdRow[0] === thirdRow[2]) && (thirdRow[2] === 1)) {
+                arrayX.push(8);
+            } else if ((thirdRow[1] === thirdRow[2]) && (thirdRow[2] === 1)) {
+                arrayX.push(7);
+            } else if ((firstRow[0] === secondRow[0]) && (secondRow[0] === 1)) {
+                arrayX.push(7);
+            } else if ((firstRow[0] === secondRow[1]) && (secondRow[1] === 1)) {
+                arrayX.push(9);
+            } else if ((firstRow[2] === secondRow[1]) && secondRow[1] === 0) {
+                arrayX.push(7);
             }
             break;
 
