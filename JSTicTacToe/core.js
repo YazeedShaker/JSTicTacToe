@@ -13,7 +13,7 @@ function nextStep(arrayTotal, choice) {
     secondRow = [arrayTotal[3], arrayTotal[4], arrayTotal[5]];
     thirdRow = [arrayTotal[6], arrayTotal[7], arrayTotal[8]];
 
-    //for there is already a winning case in the given input array we change it 
+    //for there is already a winning case in the given input array we change it by (2) 
     if (((firstRow[0] === firstRow[1]) && (firstRow[1] === firstRow[2])) || ((firstRow[0] === secondRow[0]) && (secondRow[0] === thirdRow[0])) || ((firstRow[0] === secondRow[1]) && (secondRow[1] === thirdRow[2]))) {
         firstRow[0] = 2;
     } if (((firstRow[2] === secondRow[2]) && (secondRow[2] === thirdRow[2])) || ((firstRow[2] === secondRow[1]) && (secondRow[1] === thirdRow[0]))) {
