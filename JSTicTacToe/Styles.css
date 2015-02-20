@@ -5,21 +5,31 @@
 */
 
 body {
+    background:url("borders.jpg");
 }
 
-table{
-    border: 5px solid black;
-    height:700px;
-    width:700px;
-    margin-top: 120px;
-    margin-left: 600px;    
+#yellowPart {
+    width: 100%;
+    background-color: #ebd111;
+    height: 100px;
+    margin-bottom:-63px;
 }
+
+table {
+    height: 500px;
+    width: 500px;
+    margin:auto;
+    margin-top:100px;
+    border-spacing:0px;
+    border-collapse:collapse;
+}
+
 td {
-    border: 1px solid black;
+    border: 6px solid black;
 }
+
 .Oblock {
-
 }
-.Xblock {
 
+.Xblock {
 }
