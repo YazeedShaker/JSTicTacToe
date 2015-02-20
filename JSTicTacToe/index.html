@@ -3,26 +3,27 @@
 <head>
     <title></title>
     <link type="text/css" rel="stylesheet" href="Styles.css" />
+    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="bindings.js"></script>
 </head>
 <body>
     
     <table>
-        <tr>
-            <td style="background-color:#e9201c" class="one">1</td>
-            <td class="one">2</td>
-            <td class="one">3</td>
+        <tr id="firstRow">
+            <td style="background-color:#e9201c"></td>
+            <td></td>
+            <td></td>
         </tr>
         <tr>
-            <td>4</td>
-            <td>5</td>
-            <td style="background-color:#1235a7">6</td>
+            <td></td>
+            <td></td>
+            <td style="background-color:#1235a7" id="cellSix"></td>
         </tr>
         <tr>
-            <td>7
-                <div id="yellowPart"></div>
-            </td>
-            <td>8</td>
-            <td>9</td>
+            <td id="yellowCell"></td>
+            <td></td>
+            <td></td>
         </tr>
     </table>
 </body>

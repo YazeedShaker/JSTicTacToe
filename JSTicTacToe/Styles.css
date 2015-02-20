@@ -8,14 +8,13 @@ body {
     background:url("borders.jpg");
 }
 
-#yellowPart {
-    width: 100%;
-    background-color: #ebd111;
-    height: 100px;
-    margin-bottom:-63px;
+#firstRow{
+    width:150px;;
+    height:150px;
 }
 
 table {
+    table-layout:fixed;
     height: 500px;
     width: 500px;
     margin:auto;
@@ -26,6 +25,16 @@ table {
 
 td {
     border: 6px solid black;
+    cursor:default;
+    width:150px;
+    height:150px;
+    color:black;
+    font-size:100px;;
+    text-align:center;
+}
+
+#yellowCell{
+   background:-webkit-gradient(linear, left top, right top, color-stop(45%,#e7dd41), color-stop(45%,white));
 }
 
 .Oblock {
