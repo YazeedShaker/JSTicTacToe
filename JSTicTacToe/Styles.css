@@ -5,36 +5,85 @@
 */
 
 body {
-    background:url("borders.jpg");
+    background-color:white;
 }
 
-#firstRow{
-    width:150px;;
-    height:150px;
+#firstRow {
+    width: 150px;
+    height: 150px;
 }
 
 table {
-    table-layout:fixed;
+    table-layout: fixed;
     height: 500px;
     width: 500px;
-    margin:auto;
-    margin-top:100px;
-    border-spacing:0px;
-    border-collapse:collapse;
+    margin: auto;
+    margin-top: 100px;
+    border-spacing: 0px;
+    border-collapse: collapse;
+    border-radius: 5px;
 }
 
 td {
-    border: 6px solid black;
-    cursor:default;
-    width:150px;
-    height:150px;
-    color:black;
-    font-size:100px;;
-    text-align:center;
+    border: 5px solid white;
+    cursor: default;
+    width: 150px;
+    height: 150px;
+    color: #c43939;
+    font-size: 100px;
+    text-align: center;
 }
 
-#yellowCell{
-   background:-webkit-gradient(linear, left top, right top, color-stop(45%,#e7dd41), color-stop(45%,white));
+td:hover {
+    background-color: white;
+   }
+
+/*
+    #topLine {
+    border: 5px solid black;
+    margin-bottom: -110px;
+    margin-top: 100px;
+    }
+*/
+
+/*
+    #yellowCell {
+    background: -webkit-gradient(linear, left top, right top, color-stop(45%,#e7dd41), color-stop(45%,white));
+}
+*/
+
+/*
+    #yellowCell:hover {
+        background: -webkit-gradient(linear, left top, right top, color-stop(45%,white), color-stop(45%,#e7dd41));
+    }
+
+*/
+
+/*
+hr {
+    border: 5px solid white;
+    margin-top: -10px;
+}
+*/
+
+#myButton {
+    margin-top:10px;
+    margin-bottom:-60px;
+    height: 50px;
+    width: 100px;
+    background-color: #333a44;
+    color: white;
+    border: none;
+    font-family:sans-serif;
+    font-size:16px;
+}
+
+#myButton:hover {
+    color: #c43939;
+    }
+
+div {
+    background-color: #333a44;
 }
 
 .Oblock {

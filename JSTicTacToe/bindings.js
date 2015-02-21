@@ -2,7 +2,13 @@
 // so if the table has an X that will be represented as 0 and if it is O that will be represented as 1
 
 $(document).ready(function () {
-    $("td,div").click(function () {
+    $("td").click(function () {
         $(this).text("x");
     });
+
+    $("#myButton").on("click", function () {
+        $("td").text(" ");
+    });
+        
+
 });
