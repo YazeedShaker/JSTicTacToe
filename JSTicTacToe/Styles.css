@@ -32,39 +32,12 @@ td {
     color: #c43939;
     font-size: 100px;
     text-align: center;
+    font-family:Kleptomaniac;
 }
 
 td:hover {
     background-color: white;
    }
-
-/*
-    #topLine {
-    border: 5px solid black;
-    margin-bottom: -110px;
-    margin-top: 100px;
-    }
-*/
-
-/*
-    #yellowCell {
-    background: -webkit-gradient(linear, left top, right top, color-stop(45%,#e7dd41), color-stop(45%,white));
-}
-*/
-
-/*
-    #yellowCell:hover {
-        background: -webkit-gradient(linear, left top, right top, color-stop(45%,white), color-stop(45%,#e7dd41));
-    }
-
-*/
-
-/*
-hr {
-    border: 5px solid white;
-    margin-top: -10px;
-}
-*/
 
 #myButton {
     margin-top:10px;
@@ -83,6 +56,9 @@ hr {
     }
 
 div {
+    width:500px;
+    height:500px;
+    margin:auto;
     background-color: #333a44;
 }
 
@@ -90,4 +66,48 @@ div {
 }
 
 .Xblock {
+}
+
+/*This is the styling for the Intro page*/
+
+#myIntroDivision{
+    width:100%;
+    height:500px;
+    background-color: #333a44;
+    margin-top:15%;
+    /*border-radius:5px;*/
+}
+
+#askingChoice{
+    font-size:45px;
+    text-align:center;
+    padding-top:150px;
+    color:white;
+    font-family:AvantGarde Bk BT;
+    font-weight:500;
+        
+}
+
+p{
+    margin-top:-230px;    
+}
+
+.choice{
+    height: 100px;
+    width: 100px;
+    border-radius:100%;
+    background-color:#c43939;
+    color:#333a44;
+    font-family:Kleptomaniac;
+    font-size:50px;
+    margin-left:650px;
+    border:none;
+    outline:0;
+    margin-top:80px;
+    margin-right:-550px;
+}
+
+.choice:hover{
+    background-color:white;
+    color:#333a44;
 }
