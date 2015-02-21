@@ -84,8 +84,8 @@ div {
     padding-top:150px;
     color:white;
     font-family:AvantGarde Bk BT;
-    font-weight:500;
-        
+    font-weight:bold;
+    cursor:default;   
 }
 
 p{
@@ -95,8 +95,7 @@ p{
 .choice{
     height: 100px;
     width: 100px;
-    border-radius:100%;
-    background-color:#c43939;
+    background-color:white;
     color:#333a44;
     font-family:Kleptomaniac;
     font-size:50px;
@@ -104,10 +103,28 @@ p{
     border:none;
     outline:0;
     margin-top:80px;
-    margin-right:-550px;
+    margin-right:-580px;
 }
 
 .choice:hover{
-    background-color:white;
-    color:#333a44;
+    background-color:#c43939;
+    color:white;
+}
+
+#bottomDivision{
+    width:100%;
+    height:200px;
+    background-color:#c43939;
+    clear:both;
+    margin-top:17%;
+}
+
+#bottomPara{
+    text-align:center;
+    color:white;
+    font-family:AvantGarde Bk BT;
+    font-size:80px;
+    font-weight:bold;
+    margin-top:0.05%;
+    cursor:default;
 }
